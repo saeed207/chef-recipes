@@ -32,7 +32,7 @@ when 'debian'
 when 'rhel'
   default['opsworks_java']['jvm_pkg']['name'] = "java-1.#{node['opsworks_java']['jvm_version']}.0-openjdk-devel"
 end
-default['opsworks_java']['jvm_pkg']['java_home_basedir'] = '/usr/local'
+default['opsworks_java']['jvm_pkg']['java_home_basedir'] = '/usr/java/latest'
 
 default['opsworks_java']['datasources'] = {}
 

@@ -40,14 +40,18 @@ default['opsworks_java']['tomcat']['base_version'] = node['opsworks_java']['java
 
 if rhel7?
   default['opsworks_java']['tomcat']['service_name'] = "tomcat"
-  default['opsworks_java']['tomcat']['catalina_base_dir'] = "/etc/tomcat"
-  default['opsworks_java']['tomcat']['webapps_base_dir'] = "/var/lib/tomcat/webapps"
-  default['opsworks_java']['tomcat']['lib_dir'] = "/usr/share/tomcat/lib"
+  default['opsworks_java']['tomcat']['catalina_base_dir'] = "/usr/local/apache-tomcat/latest"
+  default['opsworks_java']['tomcat']['webapps_base_dir'] = "/usr/local/apache-tomcat/latest/webapps"
+  default['opsworks_java']['tomcat']['lib_dir'] = "/usr/local/apache-tomcat/latest/lib"
 else
-  default['opsworks_java']['tomcat']['service_name'] = "tomcat#{node['opsworks_java']['tomcat']['base_version']}"
-  default['opsworks_java']['tomcat']['catalina_base_dir'] = "/etc/tomcat#{node['opsworks_java']['tomcat']['base_version']}"
-  default['opsworks_java']['tomcat']['webapps_base_dir'] = "/var/lib/tomcat#{node['opsworks_java']['tomcat']['base_version']}/webapps"
-  default['opsworks_java']['tomcat']['lib_dir'] = "/usr/share/tomcat#{node['opsworks_java']['tomcat']['base_version']}/lib"
+  #default['opsworks_java']['tomcat']['service_name'] = "tomcat#{node['opsworks_java']['tomcat']['base_version']}"
+  #default['opsworks_java']['tomcat']['catalina_base_dir'] = "/etc/tomcat#{node['opsworks_java']['tomcat']['base_version']}"
+  #default['opsworks_java']['tomcat']['webapps_base_dir'] = "/var/lib/tomcat#{node['opsworks_java']['tomcat']['base_version']}/webapps"
+  #default['opsworks_java']['tomcat']['lib_dir'] = "/usr/share/tomcat#{node['opsworks_java']['tomcat']['base_version']}/lib"
+  default['opsworks_java']['tomcat']['service_name'] = "tomcat"
+  default['opsworks_java']['tomcat']['catalina_base_dir'] = "/usr/local/apache-tomcat/latest"
+  default['opsworks_java']['tomcat']['webapps_base_dir'] = "/usr/local/apache-tomcat/latest/webapps"
+  default['opsworks_java']['tomcat']['lib_dir'] = "/usr/local/apache-tomcat/latest/lib"
 end
 
 default['opsworks_java']['tomcat']['port'] = 8080
